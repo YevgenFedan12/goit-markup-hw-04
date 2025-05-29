@@ -349,7 +349,6 @@ a {
 .features-section {
     background-color: #fff;
     padding: 120px 0;
-
 }
 
 .features-section-title {
@@ -367,7 +366,6 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 48px 24px;
-    /* row-gap + column-gap */
     padding: 0;
     margin: 0;
     list-style: none;
@@ -377,6 +375,39 @@ a {
 .features-card {
     width: calc((100% - 48px) / 3);
     background-color: #fff;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.features-card:hover {
+    box-shadow:
+        0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.features-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.features-overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.features-card:hover .features-overlay-text {
+    transform: translateY(0%);
 }
 
 .features-card-content {
@@ -403,11 +434,19 @@ a {
     color: #434455;
     text-align: left;
 }
-
 /* Footer */
 .page-footer {
     background-color: #2e2f42;
     padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-info {
+    margin-right: 120px;
 }
 
 .footer-logo {
@@ -433,4 +472,46 @@ a {
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-social-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer-social-icon {
+    fill: #f4f4fd;
 }
